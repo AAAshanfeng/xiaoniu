@@ -1,0 +1,20 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---- pytest ----
+.pytest_cache/
+
+# ---- 测试报告（每次运行自动生成，不入库）----
+report/
+
+# ---- IDE ----
+.idea/
+.vscode/
+
+# ---- 操作系统 ----
+.DS_Store
+Thumbs.db
