@@ -4,23 +4,6 @@ from .api_client import ApiClient
 
 base_url = "http://43.133.227.52/api"
 
-"""
-@pytest.fixture(scope="module")
-def login(username, password):
-    login_response = requests.post(f"{base_url}/login", json={
-        "username": "tester",
-        "password": "123456"
-    })
-
-    assert login_response.status_code == 200
-
-    token = login_response.json()["token"]
-
-    return {
-        "Authorization": f"Bearer {token}"
-    }
-"""
-
 
 # 提供公共对象
 @pytest.fixture(scope="session")
