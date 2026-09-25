@@ -11,7 +11,7 @@
   <img alt="pytest-html" src="https://img.shields.io/badge/report-pytest--html-orange">
 </p>
 
-> 📊 **测试报告**：本地 `report/api_report.html`、`report/ui_report.html`（`--self-contained-html` 单文件，双击即看）
+> 📊 **测试报告**：本地 `report/api_report.html`、`report/ui_report.html`
 
 ---
 
@@ -175,9 +175,9 @@ pytest ui_test  --html=report/ui_report.html  --self-contained-html
 
 - 从零搭建 **pytest 驱动的接口 + UI 双栈** 自动化工程，接口侧以 `ApiClient` 分层封装。
 - 用 **fixture** 统一管理认证头、浏览器生命周期与登录态，`admin` 重置实现**数据隔离**。
-- 参数化复用异常输入；显式等待 + 内容等待替代脆弱 `sleep`。
+- 参数化复用异常输入；显式等待 + 内容等待替代 `sleep`。
 - 断言遵循**最小充分**与**无副作用**原则，规避假绿（如识别出 Selenium `is_disabled()` 空实现，改用 `is_enabled()`）。
-- 用 `xfail(strict)` **钉住已确认缺陷**，形成缺陷生命周期闭环，而非只追求"脚本跑通"。
+- 用 `xfail(strict)` **钉住已确认缺陷**，形成缺陷生命周期闭环。
 - 接入 **pytest-html** 生成可视化报告，接口 / UI 分档输出。
 
 ---
