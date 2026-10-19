@@ -29,6 +29,6 @@ def test_check_product_data(api, user_header):
         assert not missing_field, f"商品{product.get('id')}缺少{missing_field}字段"
 
         assert isinstance(product["id"], int)
-        assert isinstance(product["name"], str) and product["name"] !=""
+        assert isinstance(product["name"], str) and product["name"] != ""
         assert isinstance(product["price"], (int, float)) and product["price"] > 0
         assert isinstance(product["stock"], int) and product["stock"] >= 0

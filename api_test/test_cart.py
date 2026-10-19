@@ -24,7 +24,7 @@ def test_check_cart_data(api, user_header):
         assert item["productId"] == 102
         assert item["price"] > 0
         assert item["quantity"] == 1
-        assert isinstance(item["name"], str) and item["name"] !=""
+        assert isinstance(item["name"], str) and item["name"] != ""
 
     expected_total = sum(item["price"] * item["quantity"] for item in items)
     assert response.json()["totalAmount"] == expected_total
@@ -58,7 +58,7 @@ def test_add_cart_duplicate(api, user_header):
 
 
 @pytest.mark.xfail(
-    reason="已知缺陷：quantity=0 时仍返回 code=0 并累加数量（对应 test_cases.md add_cart_003）",
+    reason="已知缺陷：quantity=0 时仍返回 code=0 并累加数量（对应test_cases.md add_cart_003）",
     strict=True
 )
 def test_add_cart_quantity_zero(api, user_header):

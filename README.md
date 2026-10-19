@@ -96,9 +96,9 @@
 ```bash
 python -m venv .venv
 # Windows: .venv\Scripts\activate     macOS/Linux: source .venv/bin/activate
-pip install pytest==9.1.1 requests==2.34.2 selenium==4.48.0 pytest-html==4.2.0
+pip install -r requirements.txt
 ```
-> 建议将上述依赖固化为 `requirements.txt`，便于他人一键复现。
+> 依赖已固化为 `requirements.txt`（由 `pip freeze` 生成，含传递依赖的精确版本），换环境可一键复现。核心直接依赖：`pytest==9.1.1`、`requests==2.34.2`、`selenium==4.48.0`、`pytest-html==4.2.0`。
 
 ### 3. 测试账号
 

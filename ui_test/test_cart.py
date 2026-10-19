@@ -12,7 +12,7 @@ def test_add_cart(login):
     add_cart_btn.click()
 
     cart_item = WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-remove-cart="101"]' ))
+        EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-remove-cart="101"]'))
     )
 
     assert cart_item.is_displayed()
