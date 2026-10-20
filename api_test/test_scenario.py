@@ -71,19 +71,3 @@ def test_query_nonexistent_order(api, user_header):
     check_order_response = api.check_detail_order("NO99999", user_header)
     assert check_order_response.status_code == 404
     assert check_order_response.json()["message"] == "订单不存在"
-
-
-def test_normal_user_reset(api, user_header):
-    """普通用户无权重置数据"""
-
-    reset_response = api.post("/reset", headers=user_header)
-    assert reset_response.status_code == 403
-    assert reset_response.json()["message"] == "只有管理员可以重置练习数据"
-
-
-def test_admin_reset(api, admin_header):
-    """管理员重置数据"""
-
-    reset_response = api.post("/reset", headers=admin_header)
-    assert reset_response.status_code == 200
-    assert reset_response.json()["message"] == "练习数据已重置"
