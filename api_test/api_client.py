@@ -3,20 +3,23 @@ import requests
 
 class ApiClient:
 
-    def __init__(self, base_url):
+    def __init__(self, base_url, timeout=10):
         self.base_url = base_url
+        self.timeout = timeout
 
     def post(self, path, headers=None, json=None):
         return requests.post(
             f"{self.base_url}{path}",
             headers=headers,
-            json=json
+            json=json,
+            timeout=self.timeout
         )
 
     def get(self, path, headers=None):
         return requests.get(
             f"{self.base_url}{path}",
-            headers=headers
+            headers=headers,
+            timeout=self.timeout
         )
 
     def login_post(self, username, password):
