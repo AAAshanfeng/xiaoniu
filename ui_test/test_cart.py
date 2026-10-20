@@ -11,11 +11,16 @@ def test_add_cart(login):
     )
     add_cart_btn.click()
 
-    cart_item = WebDriverWait(driver, 10).until(
+    remove_btn = WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-remove-cart="101"]'))
     )
+    cart_item = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.CSS_SELECTOR, '.cart-item'))
+    )
 
-    assert cart_item.is_displayed()
+    assert remove_btn.is_displayed()
+    assert "数量：1" in cart_item.text
+    assert "¥199.00" in cart_item.text
 
 
 def test_delete_cart(login):
